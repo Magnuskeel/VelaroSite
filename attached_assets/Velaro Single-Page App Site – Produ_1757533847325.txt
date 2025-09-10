@@ -1,0 +1,136 @@
+Velaro Single-Page App Site – Product Requirements Document
+
+Last Updated: September 10, 2025
+
+This document outlines the requirements for a modern, single-page website for Velaro, a Microsoft Dynamics 365 Business Central extension. The site will serve as a portable informational and support page (no backend) for Velaro, targeting Business Central administrators and small business owners. It covers branding guidelines, technical constraints, and the content structure (Hero, Marketing Overview, Help/FAQ, Privacy Policy, and EULA sections) needed for the site.
+
+Target Audience
+
+Business Central Administrators: Tech-savvy users who manage Business Central for their organization. They need clear setup instructions and technical details for installing and licensing the Velaro extension.
+
+Small Business Owners: Non-technical or semi-technical decision-makers looking for a quick understanding of Velaro’s value. They need a concise overview of benefits and assurances (e.g. privacy, easy setup) in accessible language.
+
+The content and tone of the site should accommodate both groups – balancing technical clarity for admins with straightforward benefits for business owners.
+
+Branding & Visual Design
+
+Logo & Color Scheme: Velaro’s logo (a white “V” with an arrow inside a circle on a blue background) must be featured prominently. The site’s color scheme should align with the logo – use the Velaro blue for backgrounds or highlights, and white or neutral colors for text and sections to maintain a clean contrast.
+
+Style: Overall design should be clean, minimal, and professional. Leverage plenty of whitespace and a simple layout that guides the eye through each section in sequence. Typography should be clear and modern (e.g. a sans-serif font) to ensure readability for all users.
+
+Consistency: The Velaro logo and branding should appear consistent across the site. For example, use the logo in the Hero section (top of page) and possibly as a favicon. Maintain consistent font styles and button styles (rounded buttons in a shade of Velaro blue for calls-to-action, etc.). Avoid clutter or overly flashy elements – the goal is a trustworthy, business-oriented look.
+
+Technical Requirements
+
+Single-Page Structure: The site will be a single, scrollable HTML page (One-Page design). All content (hero, overview, help, legal info) is contained in this page, allowing easy navigation by scrolling or using anchor links. No separate subpages are required.
+
+Fully Portable & Static: The solution must be a static site with no backend or server-side dependencies. It should run purely with HTML, CSS, and JavaScript, so it can be hosted on any web server or even opened locally. (For example, all interactive behavior like menu scrolling or collapsible FAQs should be handled via client-side JS.)
+
+Lightweight & Fast: Keep external libraries to a minimum to ensure fast load times. Use modern, efficient vanilla JavaScript or a lightweight framework if necessary (but avoid heavy frameworks for such a simple site). Optimize images (like the logo) for web. The entire page should be quick to load even on mobile networks.
+
+Responsive Design: The layout must be mobile-friendly and adapt to different screen sizes. On desktop, sections might use a multi-column layout (e.g. text beside an image), while on mobile they should stack vertically. Fonts and buttons should scale appropriately for easy reading and tapping on small screens.
+
+Accessibility: Follow basic accessibility practices (alt text for images, sufficient color contrast, semantic HTML elements for structure) so that all users, including those using screen readers, can access the content.
+
+Navigation Aids: Because it’s a one-page site, consider a simple fixed header or sticky menu with anchor links to sections (e.g. Overview, Help, Privacy, EULA) for convenience. At minimum, the Hero call-to-action button should scroll the user to the relevant section (e.g. the Help or Setup Guide part).
+
+Hero Section
+
+Velaro Logo Placement: The Velaro logo (white “V” arrow icon on blue) should be prominently displayed at the top-center of the Hero section as the defining visual element of the page. This section is the user’s first impression and should immediately convey Velaro’s branding and value proposition. It will include:
+
+App Slogan: A concise, catchy slogan summarizing Velaro. For example: “Self‑Service Portal & Automated Licensing for Business Central.” This tagline should be placed near the logo, in a large, bold font. It tells users at a glance what Velaro offers.
+
+Elevator Pitch: One or two short sentences that expand on the slogan and spark interest. For instance: “Velaro is a Business Central extension that empowers your customers with a self‑service portal and automates license management. Simplify subscription setup, activation, and payments all within your Business Central ecosystem.” This blurb should be in a slightly smaller font than the slogan, but still prominent and above the fold.
+
+Call-to-Action (CTA) Button: A prominent button labeled “Get Started” (or “View Setup Guide” – final text TBD). The CTA should stand out (e.g. white text on Velaro blue background, with a hover effect) and ideally scroll the page to the Help/FAQ section or open a setup guide. This lets admins quickly jump to installation instructions or further details. If a setup guide is a PDF or external page, the CTA can link to that; otherwise, it scrolls to the on-page Help section.
+
+Layout: The Hero content should be centered vertically and horizontally on the page (especially on desktop). Consider a full-width hero with the logo and text centered, perhaps on a subtle abstract background or just a solid color. Ensure the section is visually engaging but not overly complicated – the logo, slogan, and CTA should be immediately visible without scrolling.
+
+Marketing Overview
+
+This section provides a brief overview of Velaro’s purpose and key benefits, written in a marketing-friendly tone. It will appear right below the Hero section when scrolling down.
+
+Overview Paragraph: A short introduction (2-3 sentences) explaining what Velaro is and why it’s valuable. For example: “Velaro brings self-service convenience to Microsoft Dynamics 365 Business Central. It combines a customer portal with automated licensing, allowing you to manage subscriptions and activations effortlessly. In short, Velaro helps streamline your software licensing process while enhancing user satisfaction.” This blurb should remain high-level, focusing on value rather than technical detail.
+
+Key Benefits List: A bullet-point list of Velaro’s top benefits/features, targeting pain points of the audience. Each benefit should be just a phrase or single sentence. The list (approx. 4 items) should include:
+
+Easy Subscription Setup: Simplifies onboarding new customers or users with intuitive subscription management (no more manual license handling).
+
+Offline Licensing Support: Allows license activation in offline or firewalled Business Central environments via offline token exchange (ensuring no customer is left out due to lack of internet).
+
+Secure Activation: Ensures only authorized instances can activate and use the extension, using secure license keys and validation (protecting your intellectual property).
+
+PayPal Integration: Built-in PayPal payment integration for automated subscription payments and renewals, providing a familiar and secure checkout experience for customers. (Note: Using PayPal means financial data is handled by PayPal, not by Velaro, for security
+bectran.com
+.)
+
+These bullet points should be succinct (ideally one line each on desktop) and may be accompanied by small icons for visual appeal (e.g. a checkmark or relevant icon next to each benefit). This list gives readers a quick scan of “what’s in it for me.”
+
+Help Section (FAQ)
+
+The Help section will be presented in an FAQ style, providing self-service support information. It will be a static article with question-and-answer pairs addressing common tasks. This section should be clearly marked (e.g. a header like “Help & FAQ”) and each question could be formatted as a collapsible item or simply a bold subtitle followed by its answer. Key topics to include:
+
+How to Install the Velaro Extension: Explanation: Provide step-by-step guidance for installation. For example: “Q: How do I install Velaro in Business Central? A: You can install Velaro by downloading it from Microsoft AppSource or by importing the .app file into your Business Central environment. In Business Central’s Extension Management, choose Upload Extension if installing manually, then follow the prompts. Once installed, assign the appropriate user permissions (if any) so admins can access Velaro’s features.” (Ensure the answer is written in simple terms – even though admins are technical, clarity is key. If the extension is on AppSource, mention searching for “Velaro” there, otherwise detail the manual upload.)
+
+How to Activate a License: Explanation: Describe the process of obtaining and activating a license for Velaro. For example: “Q: How do I activate my Velaro license? A: After installing Velaro, open the Velaro extension setup page in Business Central. Enter the license key provided when you purchased Velaro (or follow the on-screen prompts to sign in and retrieve a license if online activation is supported). Click Activate. The extension will validate the license and confirm activation. If your Business Central has internet access, activation happens automatically online; if not, see the next question about offline activation.” This answer ensures administrators know how to apply their license key or credentials to use the extension.
+
+How to Use Offline Tokens (Offline Activation): Explanation: Explain how licensing works if the system has no internet connectivity. For example: “Q: My Business Central is offline. How do I activate Velaro? A: Velaro supports offline activation via tokens. In the Velaro setup page, click Generate Offline Token. This produces a unique code (representing your environment and license request). Using an internet-connected device, go to the Velaro offline activation page (or contact our support) and input the token to receive an Activation Code. Back in Business Central, enter the Activation Code to complete the license activation. This one-time code unlocks Velaro on your offline system.” Include reassurance that offline activation is as secure as online and that tokens are unique for each request.
+
+Implementation Note: The FAQ can be implemented as an accordion (expand/collapse answers) or simply a list of questions with answers beneath. Given the single-page nature, an accordion could improve readability. Each question title should be clearly distinguishable (bold or larger font) so users can scan for the topic they need. Ensure the content is written in a friendly, instructional tone.
+
+Privacy Policy
+
+The Privacy Policy section will detail how Velaro handles user and organizational data, in compliance with GDPR (for EU users) and CPRA/CCPA (for California, USA users) which are important for B2B SaaS trust. This content can be presented in smaller text (since it’s legalese) and might be collapsible or simply at the bottom of the page with a distinct subheader. Include the following boilerplate points:
+
+Data Collection: Clarify what data Velaro (and its associated services) collects. This likely includes contact information (e.g. names, business emails of administrators), license details (like license keys or subscription IDs), and any data entered into the Velaro portal. Emphasize that Velaro mainly uses Business Central’s existing data and does not collect excessive personal data. No sensitive personal information (like home addresses, social insurance numbers, etc.) is directly collected by the Velaro extension beyond what’s needed for licensing.
+
+Use of Data: Explain that any collected data is used solely for providing and improving the Velaro service – e.g. to verify licenses, enable the self-service portal features, process payments, and communicate necessary information to the customer. Make it clear that data is not used for unrelated purposes like advertising. If applicable, mention that aggregate usage data might be used internally to improve the product (with no personal identifiers).
+
+Third-Party Services: List any third parties that may process data as part of Velaro’s service. For Velaro, a key example is PayPal for payment processing – if customers purchase or subscribe to the extension, the payment is handled via PayPal. State that financial information (like credit card details) is not stored by Velaro; it’s processed securely by PayPal
+bectran.com
+. If the Velaro portal or licensing system relies on any cloud services or telemetry, mention those providers (e.g. hosting providers or analytics, if any). Ensure each third-party’s role is described (e.g. “Payment transactions are handled by PayPal, which will receive billing info to process payments”).
+
+Data Retention: State that personal/business data is retained only as long as necessary for the purposes of licensing and compliance. For instance, account and license information is kept for the duration of your Velaro subscription and for a period after (e.g. to comply with finance or audit requirements), after which it is deleted or anonymized. Be sure to include that if a user requests deletion of their data (and it’s feasible within the context of using the extension), Velaro will accommodate as required by law.
+
+User Rights: Acknowledge users’ rights under GDPR/CPRA. For GDPR: users (or customer companies) have the right to access any personal data held, request corrections, or request deletion of their personal data. For CPRA: California residents have the right to know what categories of personal information are collected, the right to request deletion, and to opt-out of any “sale” of personal data. Provide a contact method (email or web form) for exercising these rights or for privacy inquiries. For example: “If you need to access, correct, or delete your information, please contact us at [support@velaro…].”
+
+Data Security: Note that Velaro implements reasonable security measures to protect data. For example, data exchanged between Business Central and Velaro’s licensing service is encrypted, and any stored information is protected on secure servers. Also mention that Velaro does not sell personal information to third parties
+rankingpen.com
+, and personal data is only shared with service providers as needed to operate the service (and with legal authorities if required by law). This assures compliance with regulations and builds trust (explicitly, “we do not sell your data” is a crucial statement under CPRA
+rankingpen.com
+).
+
+Consent & Cookies: If the site itself uses any tracking (likely minimal), disclose that. For a simple static site, you might only have standard web server logs or a cookie if using an analytics script. If no cookies or tracking beyond essential function, state that no personal tracking is done on the site without consent. (E.g. “Velaro’s website does not use any cookies aside from essential technical cookies. We do not track you for advertising.” If you include analytics, mention it and allow opt-out if needed.)
+
+Changes to Policy: Include a note that the privacy policy may be updated and will include a “last updated” date (and that continued use of the site or extension implies acceptance of the revised policy). Also, list a contact for privacy concerns (email and/or company address). For example: “If you have questions about our Privacy Policy or data practices, contact us at privacy@velaro.com.”
+
+The Privacy Policy text should be written in clear, formal language. Make sure it addresses the typical concerns of B2B customers (security, no selling data, compliance with laws). It’s good practice to have a “We do not sell personal data” clause prominently
+rankingpen.com
+ to cover CPRA. All of this content can be in a smaller font or in a box to differentiate it from the marketing content, since it’s more legal in nature.
+
+End User License Agreement (EULA)
+
+The EULA section will outline the legal terms under which users (the customer company or end-user of the extension) can use Velaro. This is particularly important for a Business Central extension to set expectations and protect the developer/company. The EULA can be presented as a scrollable text box or collapsible section given its length. Key clauses to include (in plain English, but legally sound language):
+
+License Grant & Usage Rights: Clearly state that by installing or using Velaro, the user is granted a non-exclusive, non-transferable license to use the extension within their organization, according to the terms. The license is likely subscription-based (or per perpetual terms if applicable). You should note that the right to use Velaro is conditional on paying any required fees or having an active subscription
+netronic.com
+. For example: “Subject to your compliance with the EULA and payment of applicable subscription fees, we grant your organization a non-exclusive, non-transferable right to use the Velaro extension within your Microsoft Dynamics 365 Business Central environment.” This clause defines who can use the software and how.
+
+Scope of License: Define the scope and limitations of the license. For instance, specify if the license is per company, per Business Central tenant, or per user. (E.g. “The license allows use of Velaro on one Business Central production environment (tenant) and its sandboxes. A separate license is required for each production environment.” Adjust this based on Velaro’s actual licensing model.) Also mention that the software is licensed, not sold – the user does not own it, they have rights to use it under conditions.
+
+Limitations & User Obligations: List prohibited actions to protect the software’s integrity and IP. Common limitations include: no reverse engineering, decompiling, or disassembling the extension code; no redistributing or reselling the extension to third parties; no using the extension outside the agreed scope (for example, not using a single license for multiple companies or offering it as a service to third parties). Also, if applicable, mention that users may not remove or obscure any Velaro logos or notices within the software. Essentially, this part should enumerate things the user must not do with the software beyond the intended use.
+
+Termination: State the conditions under which the EULA (and the user’s right to use Velaro) can be terminated. For example: “This agreement and your license to use Velaro remain in effect until terminated. We may terminate the license if you violate the terms (for instance, misuse the software or fail to pay subscription fees). You may terminate it at any time by uninstalling Velaro. Upon termination, you must cease all use of Velaro and remove it from your systems.” Also clarify that no refunds are due on termination (if that’s policy) and that provisions like liability limitations survive termination.
+
+Disclaimer of Warranty: As a standard practice, include that the software is provided “as is” without warranties. Explain that Velaro is offered without any guarantees of performance, that it may not meet all expectations, and any use is at the user’s own risk. For example: “Velaro is provided “as is”, without warranty of any kind. We do not guarantee that the extension will be error-free or meet all of your requirements. Use of the software is at your sole risk.” This protects against warranty claims.
+
+Limitation of Liability: Limit the developer’s liability for damages. State that under no circumstances will the Velaro provider be liable for indirect, consequential, or special damages arising from use of the software (such as lost profits, lost data, business interruption, etc.), and cap any direct damages (often to the amount paid for the product). For example: “To the maximum extent permitted by law, <Company> will not be liable for any indirect or consequential damages related to your use of Velaro. Our total liability for any claims under this EULA is limited to the fees you paid for the software in the past 12 months.” This ensures that even if something goes wrong, the financial exposure is limited
+termsfeed.com
+termsfeed.com
+.
+
+Governing Law: Specify the jurisdiction whose laws will govern the EULA. Typically this is the country or state where the Velaro provider is based. For instance, “This EULA is governed by the laws of the Province of Quebec, Canada, without regard to its conflict of law principles.” (Use the appropriate jurisdiction; the example assumes Quebec, since the user is located in Quebec, but adjust as needed.) Also, it can mention dispute resolution or venue if relevant (e.g. disputes shall be resolved in the courts of that jurisdiction).
+
+Other Clauses: You may include other standard EULA clauses as needed: Intellectual Property (stating that Velaro’s code and design are proprietary and owned by the company), Indemnification (user must indemnify the company against third-party claims resulting from misuse), Severability (if one part of the EULA is invalid, the rest remains in effect), and Changes to Terms (the company can update the EULA, with notice). Since this is a simple site, these can be briefly mentioned or omitted for brevity, but in a full EULA they are usually present.
+
+The EULA text should be written in formal language. It’s acceptable to use boilerplate legal phrasing. The site might show a summary or just a “Read EULA” link that expands the full text. Make sure to include a date or version number for the EULA (e.g. “Version 1.0, effective 2025-09-10”) so that it’s clear when it was last updated. Users should be able to easily find this section (perhaps linked in the page footer as “EULA”).
