@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
 import MarketingOverview from "@/components/marketing-overview";
+import Pricing from "@/components/pricing";
 import FAQ from "@/components/faq";
 import PrivacyPolicy from "@/components/privacy-policy";
 import EULA from "@/components/eula";
@@ -12,6 +13,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       <MarketingOverview />
+      <Pricing />
       <FAQ />
       <PrivacyPolicy />
       <EULA />

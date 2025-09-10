@@ -36,6 +36,13 @@ export default function Navigation() {
               Overview
             </button>
             <button 
+              onClick={() => scrollToSection('pricing')} 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              data-testid="link-pricing"
+            >
+              Pricing
+            </button>
+            <button 
               onClick={() => scrollToSection('help')} 
               className="text-muted-foreground hover:text-foreground transition-colors"
               data-testid="link-help"
@@ -77,6 +84,13 @@ export default function Navigation() {
                 data-testid="link-overview-mobile"
               >
                 Overview
+              </button>
+              <button 
+                onClick={() => scrollToSection('pricing')} 
+                className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors w-full text-left"
+                data-testid="link-pricing-mobile"
+              >
+                Pricing
               </button>
               <button 
                 onClick={() => scrollToSection('help')} 
