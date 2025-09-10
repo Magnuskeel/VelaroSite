@@ -1,0 +1,226 @@
+/* Velaro Brand Colors and Variables */
+:root {
+  --velaro-blue: hsl(220, 91%, 58%);
+  --velaro-blue-dark: hsl(220, 91%, 48%);
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navbar */
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* Custom Utility Classes */
+.gradient-hero {
+  background: linear-gradient(135deg, var(--velaro-blue) 0%, var(--velaro-blue-dark) 100%);
+}
+
+.nav-blur {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to { 
+    opacity: 1; 
+  }
+}
+
+/* Section Spacing */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Button Hover Effects */
+.hover\:bg-opacity-90:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover\:-translate-y-1:hover {
+  transform: translateY(-0.25rem);
+}
+
+/* Pricing Toggle Styles */
+.pricing-toggle {
+  background-color: var(--velaro-blue);
+}
+
+.pricing-toggle-inactive {
+  background-color: #e5e7eb;
+}
+
+/* FAQ Accordion Styles */
+.faq-chevron.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-logo {
+    height: 6rem;
+    width: 6rem;
+  }
+  
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Tablet Responsive Adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Responsive */
+@media (min-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Accessibility Improvements */
+.focus\:ring-2:focus {
+  outline: 2px solid var(--velaro-blue);
+  outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+.transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-shadow {
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Hover States for Cards */
+.hover\:shadow-md:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.hover\:bg-gray-50:hover {
+  background-color: #f9fafb;
+}
+
+.hover\:bg-gray-200:hover {
+  background-color: #e5e7eb;
+}
+
+.hover\:text-white:hover {
+  color: #ffffff;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+/* Custom Velaro Blue States */
+.hover\:bg-velaro-blue-dark:hover {
+  background-color: var(--velaro-blue-dark);
+}
+
+.text-velaro-blue {
+  color: var(--velaro-blue);
+}
+
+.bg-velaro-blue {
+  background-color: var(--velaro-blue);
+}
+
+.border-velaro-blue {
+  border-color: var(--velaro-blue);
+}
+
+/* Additional spacing and layout utilities */
+.space-y-1 > * + * {
+  margin-top: 0.25rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.space-y-8 > * + * {
+  margin-top: 2rem;
+}
+
+.space-x-2 > * + * {
+  margin-left: 0.5rem;
+}
+
+.space-x-4 > * + * {
+  margin-left: 1rem;
+}
+
+.space-x-8 > * + * {
+  margin-left: 2rem;
+}

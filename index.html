@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velaro - Customer & Vendor Portal for Business Central</title>
+  <meta name="description" content="Velaro provides customers and vendors with secure portal access to information and services, streamlining business interactions within Microsoft Dynamics 365 Business Central.">
+  
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Velaro - Customer & Vendor Portal for Business Central">
+  <meta property="og:description" content="Velaro provides customers and vendors with secure portal access to information and services, streamlining business interactions within Microsoft Dynamics 365 Business Central.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'velaro-blue': 'hsl(220, 91%, 58%)',
+            'velaro-blue-dark': 'hsl(220, 91%, 48%)',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+  
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <img src="assets/velaro_logo.png" alt="Velaro Logo" class="h-8 w-8" data-testid="logo-nav">
+          <span class="text-lg font-semibold text-gray-900">Velaro</span>
+        </div>
+        
+        <div class="hidden md:flex space-x-8">
+          <a href="#overview" class="text-gray-600 hover:text-gray-900 transition-colors" data-testid="link-overview">Overview</a>
+          <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition-colors" data-testid="link-pricing">Pricing</a>
+          <a href="#help" class="text-gray-600 hover:text-gray-900 transition-colors" data-testid="link-help">Help & FAQ</a>
+          <a href="#privacy" class="text-gray-600 hover:text-gray-900 transition-colors" data-testid="link-privacy">Privacy</a>
+          <a href="#eula" class="text-gray-600 hover:text-gray-900 transition-colors" data-testid="link-eula">EULA</a>
+        </div>
+        
+        <button class="md:hidden text-gray-900" id="mobile-menu-button" data-testid="button-mobile-menu" aria-label="Toggle mobile menu">
+          <svg class="h-6 w-6" id="menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg class="h-6 w-6 hidden" id="close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile menu -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-200">
+          <a href="#overview" class="block px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors" data-testid="link-overview-mobile">Overview</a>
+          <a href="#pricing" class="block px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors" data-testid="link-pricing-mobile">Pricing</a>
+          <a href="#help" class="block px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors" data-testid="link-help-mobile">Help & FAQ</a>
+          <a href="#privacy" class="block px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors" data-testid="link-privacy-mobile">Privacy</a>
+          <a href="#eula" class="block px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors" data-testid="link-eula-mobile">EULA</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="gradient-hero text-white pt-24 pb-20 lg:pt-32 lg:pb-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+      <div class="mb-8">
+        <img src="assets/velaro_logo.png" alt="Velaro Logo" class="mx-auto h-24 w-24 sm:h-32 sm:w-32 mb-6" data-testid="logo-hero">
+      </div>
+      
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-testid="text-slogan">
+        Customer & Vendor Portal for Business Central
+      </h1>
+      
+      <p class="text-xl sm:text-2xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed" data-testid="text-elevator-pitch">
+        Velaro is a Business Central extension that provides your customers and vendors with a powerful self-service portal. Streamline interactions, enable secure access to information, and enhance business relationships all within your Business Central ecosystem.
+      </p>
+      
+      <a href="#help" class="inline-block bg-white text-velaro-blue px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1" data-testid="button-get-started">
+        Get Started
+      </a>
+    </div>
+  </section>
+
+  <!-- Marketing Overview Section -->
+  <section id="overview" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6" data-testid="text-overview-title">
+          Why Choose Velaro?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed" data-testid="text-overview-description">
+          Velaro brings self-service convenience to Microsoft Dynamics 365 Business Central. It provides customers and vendors with secure portal access to information and services, streamlining business interactions while enhancing user satisfaction.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm border border-gray-200 hover:shadow-md transition-shadow" data-testid="card-benefit-0">
+          <div class="w-16 h-16 bg-velaro-blue rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3" data-testid="text-benefit-title-0">
+            Easy Customer Onboarding
+          </h3>
+          <p class="text-gray-600" data-testid="text-benefit-description-0">
+            Simplifies onboarding new customers and vendors with intuitive portal setup and user management.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm border border-gray-200 hover:shadow-md transition-shadow" data-testid="card-benefit-1">
+          <div class="w-16 h-16 bg-velaro-blue rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3" data-testid="text-benefit-title-1">
+            Flexible Access Control
+          </h3>
+          <p class="text-gray-600" data-testid="text-benefit-description-1">
+            Provides robust access control features to manage what information and services each portal user can access.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm border border-gray-200 hover:shadow-md transition-shadow" data-testid="card-benefit-2">
+          <div class="w-16 h-16 bg-velaro-blue rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5-6v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3" data-testid="text-benefit-title-2">
+            Secure Portal Access
+          </h3>
+          <p class="text-gray-600" data-testid="text-benefit-description-2">
+            Ensures only authorized users can access the portal with secure authentication and role-based permissions.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 text-center shadow-sm border border-gray-200 hover:shadow-md transition-shadow" data-testid="card-benefit-3">
+          <div class="w-16 h-16 bg-velaro-blue rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3" data-testid="text-benefit-title-3">
+            Integrated Payments
+          </h3>
+          <p class="text-gray-600" data-testid="text-benefit-description-3">
+            Built-in payment integration allowing customers to make payments directly through the portal with secure checkout.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6" data-testid="text-pricing-title">
+          Simple, Transparent Pricing
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8" data-testid="text-pricing-description">
+          Choose the plan that fits your business needs. All plans include secure portal access and customer management features.
+        </p>
+        
+        <!-- Billing Toggle -->
+        <div class="flex items-center justify-center space-x-4 mb-12">
+          <span class="text-sm font-medium" id="monthly-label">Monthly</span>
+          <button id="billing-toggle" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-velaro-blue focus:ring-offset-2" data-testid="toggle-billing-period">
+            <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1" id="toggle-slider"></span>
+          </button>
+          <span class="text-sm font-medium" id="annual-label">
+            Annual
+            <span class="ml-1 text-xs text-green-600 font-semibold">(Save 15%)</span>
+          </span>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Trial Tier -->
+        <div class="bg-white rounded-lg border border-gray-200 p-8 relative" data-testid="card-pricing-trial">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2" data-testid="text-tier-name-trial">Trial</h3>
+            <p class="text-gray-600 mb-4" data-testid="text-tier-description-trial">
+              Try Velaro with limited features
+            </p>
+            <div class="mb-4">
+              <span class="text-4xl font-bold text-gray-900" data-testid="text-price-trial">Free</span>
+              <span class="text-gray-600 ml-2">for 14 days</span>
+            </div>
+          </div>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start" data-testid="feature-trial-0">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Basic portal access</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-trial-1">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Up to 5 portal users</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-trial-2">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Standard support</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-trial-3">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Basic customization</span>
+            </li>
+          </ul>
+          
+          <a href="#help" class="w-full inline-block text-center bg-gray-100 text-gray-700 px-4 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors" data-testid="button-cta-trial">
+            Start Free Trial
+          </a>
+        </div>
+
+        <!-- Basic Tier -->
+        <div class="bg-white rounded-lg border-2 border-velaro-blue p-8 relative shadow-lg" data-testid="card-pricing-basic">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-velaro-blue text-white px-4 py-1 rounded-full text-sm font-semibold">
+              Most Popular
+            </span>
+          </div>
+          
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2" data-testid="text-tier-name-basic">Basic</h3>
+            <p class="text-gray-600 mb-4" data-testid="text-tier-description-basic">
+              Essential portal features for small businesses
+            </p>
+            <div class="mb-4">
+              <span class="text-4xl font-bold text-gray-900" data-testid="text-price-basic" id="basic-price">$59.95</span>
+              <span class="text-gray-600 ml-2" id="basic-period">/month</span>
+              <div class="text-sm text-green-600 font-semibold mt-1 hidden" id="basic-savings"></div>
+            </div>
+          </div>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start" data-testid="feature-basic-0">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Full portal functionality</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-basic-1">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Up to 50 portal users</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-basic-2">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Email support</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-basic-3">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Custom branding</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-basic-4">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Payment integration</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-basic-5">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">User access controls</span>
+            </li>
+          </ul>
+          
+          <a href="#help" class="w-full inline-block text-center bg-velaro-blue text-white px-4 py-3 rounded-lg font-semibold hover:bg-velaro-blue-dark transition-colors" data-testid="button-cta-basic">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Plus Tier -->
+        <div class="bg-white rounded-lg border border-gray-200 p-8 relative" data-testid="card-pricing-plus">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2" data-testid="text-tier-name-plus">Plus</h3>
+            <p class="text-gray-600 mb-4" data-testid="text-tier-description-plus">
+              Advanced features for growing businesses
+            </p>
+            <div class="mb-4">
+              <span class="text-4xl font-bold text-gray-900" data-testid="text-price-plus" id="plus-price">$89.95</span>
+              <span class="text-gray-600 ml-2" id="plus-period">/month</span>
+              <div class="text-sm text-green-600 font-semibold mt-1 hidden" id="plus-savings"></div>
+            </div>
+          </div>
+          
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start" data-testid="feature-plus-0">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Everything in Basic</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-plus-1">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Unlimited portal users</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-plus-2">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Priority support</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-plus-3">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Advanced customization</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-plus-4">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">API access</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-plus-5">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Advanced reporting</span>
+            </li>
+            <li class="flex items-start" data-testid="feature-plus-6">
+              <svg class="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-gray-600">Single sign-on (SSO)</span>
+            </li>
+          </ul>
+          
+          <a href="#help" class="w-full inline-block text-center bg-gray-100 text-gray-700 px-4 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors" data-testid="button-cta-plus">
+            Get Started
+          </a>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <p class="text-gray-600" data-testid="text-pricing-note">
+          All plans include free setup assistance and 30-day money-back guarantee. 
+          Need a custom solution? <a href="#help" class="text-velaro-blue hover:underline">Contact us</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="help" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6" data-testid="text-faq-title">
+          Help & FAQ
+        </h2>
+        <p class="text-xl text-gray-600" data-testid="text-faq-subtitle">
+          Common questions about installing and using Velaro
+        </p>
+      </div>
+      
+      <div class="space-y-4">
+        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-toggle" data-target="faq-install" data-testid="button-faq-install">
+            <h3 class="text-lg font-semibold text-gray-900">How to Install the Velaro Extension</h3>
+            <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="px-6 pb-4 hidden faq-content" id="faq-install" data-testid="content-faq-install">
+            <div class="text-gray-600 space-y-3">
+              <p>You can install Velaro by downloading it from Microsoft AppSource or by importing the .app file into your Business Central environment.</p>
+              <ol class="list-decimal list-inside space-y-2 ml-4">
+                <li>In Business Central's Extension Management, choose <strong>Upload Extension</strong> if installing manually</li>
+                <li>Follow the prompts to upload the Velaro .app file</li>
+                <li>Once installed, assign the appropriate user permissions</li>
+                <li>Navigate to the Velaro setup page to begin configuration</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-toggle" data-target="faq-setup" data-testid="button-faq-setup">
+            <h3 class="text-lg font-semibold text-gray-900">How to Set Up the Customer Portal</h3>
+            <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="px-6 pb-4 hidden faq-content" id="faq-setup" data-testid="content-faq-setup">
+            <div class="text-gray-600 space-y-3">
+              <p>After installing Velaro, follow these steps to configure your customer and vendor portal:</p>
+              <ol class="list-decimal list-inside space-y-2 ml-4">
+                <li>Open the Velaro extension setup page in Business Central</li>
+                <li>Configure portal settings and branding options</li>
+                <li>Set up user roles and permissions for portal access</li>
+                <li>Define what information and services customers/vendors can access</li>
+                <li>Test the portal configuration with a sample user account</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-toggle" data-target="faq-users" data-testid="button-faq-users">
+            <h3 class="text-lg font-semibold text-gray-900">How to Manage Portal Users and Access</h3>
+            <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="px-6 pb-4 hidden faq-content" id="faq-users" data-testid="content-faq-users">
+            <div class="text-gray-600 space-y-3">
+              <p>Velaro provides flexible access control to manage who can access your portal and what they can see:</p>
+              <ol class="list-decimal list-inside space-y-2 ml-4">
+                <li>In the Velaro user management section, create portal user accounts</li>
+                <li>Assign appropriate roles (Customer, Vendor, or custom roles)</li>
+                <li>Configure permissions for each role to control access to specific information</li>
+                <li>Set up authentication methods for secure portal access</li>
+                <li>Monitor user activity and adjust permissions as needed</li>
+                <li>Provide users with their portal login credentials and access instructions</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-toggle" data-target="faq-support" data-testid="button-faq-support">
+            <h3 class="text-lg font-semibold text-gray-900">How to Get Support</h3>
+            <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 faq-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="px-6 pb-4 hidden faq-content" id="faq-support" data-testid="content-faq-support">
+            <div class="text-gray-600 space-y-3">
+              <p>If you need additional help with Velaro, here are your support options:</p>
+              <ul class="list-disc list-inside space-y-2 ml-4">
+                <li>Check the built-in help documentation within the Velaro extension</li>
+                <li>Review the setup guide and troubleshooting tips in your admin portal</li>
+                <li>Contact our support team with your configuration details for personalized assistance</li>
+                <li>Visit our knowledge base for additional resources and updates</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Policy Section -->
+  <section id="privacy" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8" data-testid="text-privacy-title">
+        Privacy Policy
+      </h2>
+      <div class="prose prose-lg max-w-none text-gray-600 space-y-6">
+        <div class="bg-white rounded-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4" data-testid="text-data-collection-title">
+            Data Collection
+          </h3>
+          <p class="mb-4">
+            Velaro collects minimal data necessary to provide our portal services. This includes:
+          </p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Contact information (names, business emails of administrators)</li>
+            <li>Portal user details (usernames, roles, permissions)</li>
+            <li>Data entered into the Velaro portal interface</li>
+            <li>Basic usage analytics to improve service quality</li>
+          </ul>
+          <p class="mt-4">
+            Velaro primarily uses Business Central's existing data and does not collect excessive personal data. 
+            No sensitive personal information such as home addresses or social insurance numbers is collected.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4" data-testid="text-use-data-title">
+            Use of Data
+          </h3>
+          <p class="mb-4">
+            Any collected data is used solely for providing and improving the Velaro service:
+          </p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>To enable and manage portal access for customers and vendors</li>
+            <li>To process payments and manage portal services</li>
+            <li>To communicate necessary information to customers</li>
+            <li>To provide technical support and troubleshooting</li>
+          </ul>
+          <p class="mt-4">
+            Data is not used for unrelated purposes such as advertising. Aggregate usage data may be used 
+            internally to improve the product, with no personal identifiers included.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4" data-testid="text-third-party-title">
+            Third-Party Services
+          </h3>
+          <p class="mb-4">
+            Velaro integrates with the following third-party services:
+          </p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li><strong>Payment Processors:</strong> Payment transactions are handled by secure payment processors, which receive billing information to process payments. Financial information such as credit card details is not stored by Velaro.</li>
+            <li><strong>Microsoft Business Central:</strong> Velaro operates within your existing Business Central environment and accesses necessary data through standard Business Central APIs.</li>
+          </ul>
+          <p class="mt-4">
+            Each third-party service has its own privacy policy governing how they handle your data.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4" data-testid="text-compliance-title">
+            GDPR & CCPA Compliance
+          </h3>
+          <p>
+            Velaro is committed to protecting your privacy rights under GDPR (EU) and CCPA (California, USA). 
+            You have the right to access, modify, or delete your personal data. Contact our support team to 
+            exercise these rights or for any privacy-related inquiries.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EULA Section -->
+  <section id="eula" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8" data-testid="text-eula-title">
+        End User License Agreement
+      </h2>
+      <div class="prose prose-lg max-w-none text-gray-600 space-y-6">
+        <div class="bg-white rounded-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4" data-testid="text-license-grant-title">
+            License Grant
+          </h3>
+          <p>
+            Subject to the terms of this agreement, Velaro grants you a non-exclusive, non-transferable license 
+            to use the Velaro extension within your Microsoft Dynamics 365 Business Central environment. This 
+            license is valid for the subscription period and number of users specified in your purchase.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4" data-testid="text-permitted-use-title">
+            Permitted Use
+          </h3>
+          <p class="mb-4">You may:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Install and use Velaro in your licensed Business Central environment</li>
+            <li>Configure the extension according to your business needs</li>
+            <li>Access support and updates during your subscription period</li>
+            <li>Use the self-service portal features for your authorized users</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4" data-testid="text-restrictions-title">
+            Restrictions
+          </h3>
+          <p class="mb-4">You may not:</p>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Reverse engineer, decompile, or disassemble the software</li>
+            <li>Redistribute or resell the extension without authorization</li>
+            <li>Use the software beyond the scope of your license</li>
+            <li>Remove or modify any proprietary notices or labels</li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4" data-testid="text-support-updates-title">
+            Support and Updates
+          </h3>
+          <p>
+            Active subscribers receive technical support and software updates during their subscription period. 
+            Support is provided through our standard channels and is subject to our support policies. Updates 
+            may include bug fixes, security patches, and new features.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4" data-testid="text-liability-title">
+            Limitation of Liability
+          </h3>
+          <p>
+            To the maximum extent permitted by law, Velaro shall not be liable for any indirect, incidental, 
+            special, or consequential damages arising from the use of this software. Our total liability shall 
+            not exceed the amount paid for the software license.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4" data-testid="text-termination-title">
+            Termination
+          </h3>
+          <p>
+            This license remains in effect until terminated. We may terminate this license if you fail to 
+            comply with its terms. Upon termination, you must cease all use of the software and destroy all 
+            copies in your possession.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <img src="assets/velaro_logo.png" alt="Velaro Logo" class="h-8 w-8 filter brightness-0 invert" data-testid="logo-footer">
+            <span class="text-xl font-semibold">Velaro</span>
+          </div>
+          <p class="text-gray-300" data-testid="text-footer-description">
+            Customer and vendor portal for Microsoft Dynamics 365 Business Central.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4" data-testid="text-quick-links-title">Quick Links</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#overview" class="text-gray-300 hover:text-white transition-colors" data-testid="link-overview-footer">
+                Overview
+              </a>
+            </li>
+            <li>
+              <a href="#pricing" class="text-gray-300 hover:text-white transition-colors" data-testid="link-pricing-footer">
+                Pricing
+              </a>
+            </li>
+            <li>
+              <a href="#help" class="text-gray-300 hover:text-white transition-colors" data-testid="link-help-footer">
+                Help & FAQ
+              </a>
+            </li>
+            <li>
+              <a href="#privacy" class="text-gray-300 hover:text-white transition-colors" data-testid="link-privacy-footer">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="#eula" class="text-gray-300 hover:text-white transition-colors" data-testid="link-eula-footer">
+                EULA
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4" data-testid="text-support-title">Support</h4>
+          <p class="text-gray-300 mb-2" data-testid="text-support-description">
+            Need help? Contact our support team for assistance with installation, portal setup, or technical questions.
+          </p>
+          <p class="text-gray-300" data-testid="text-support-email">
+            support@velaro.com
+          </p>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-gray-300" data-testid="text-copyright">
+          © 2024 Velaro. All rights reserved. Microsoft and Dynamics 365 are trademarks of Microsoft Corporation.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
