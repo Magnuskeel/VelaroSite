@@ -23,7 +23,7 @@ export default function Footer() {
               <span className="text-xl font-semibold">Velaro</span>
             </div>
             <p className="text-primary-foreground/80" data-testid="text-footer-description">
-              Self-service portal and automated licensing for Microsoft Dynamics 365 Business Central.
+              Customer and vendor portal for Microsoft Dynamics 365 Business Central.
             </p>
           </div>
           
@@ -72,7 +72,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4" data-testid="text-support-title">Support</h4>
             <p className="text-primary-foreground/80 mb-2" data-testid="text-support-description">
-              Need help? Contact our support team for assistance with installation, licensing, or technical questions.
+              Need help? Contact our support team for assistance with installation, portal setup, or technical questions.
             </p>
             <p className="text-primary-foreground/80" data-testid="text-support-email">
               support@velaro.com

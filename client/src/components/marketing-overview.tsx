@@ -3,23 +3,23 @@ import { Zap, CheckCircle, Shield, CreditCard } from "lucide-react";
 const benefits = [
   {
     icon: Zap,
-    title: "Easy Subscription Setup",
-    description: "Simplifies onboarding new customers or users with intuitive subscription management — no more manual license handling."
+    title: "Easy Customer Onboarding",
+    description: "Simplifies onboarding new customers and vendors with intuitive portal setup and user management."
   },
   {
     icon: CheckCircle,
-    title: "Offline Licensing Support",
-    description: "Allows license activation in offline or firewalled Business Central environments via offline token exchange."
+    title: "Flexible Access Control",
+    description: "Provides robust access control features to manage what information and services each portal user can access."
   },
   {
     icon: Shield,
-    title: "Secure Activation",
-    description: "Ensures only authorized instances can activate and use the extension, using secure license keys and validation."
+    title: "Secure Portal Access",
+    description: "Ensures only authorized users can access the portal with secure authentication and role-based permissions."
   },
   {
     icon: CreditCard,
-    title: "PayPal Integration",
-    description: "Built-in PayPal payment integration for automated subscription payments and renewals with secure checkout experience."
+    title: "Integrated Payments",
+    description: "Built-in payment integration allowing customers to make payments directly through the portal with secure checkout."
   }
 ];
 
@@ -32,7 +32,7 @@ export default function MarketingOverview() {
             Why Choose Velaro?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed" data-testid="text-overview-description">
-            Velaro brings self-service convenience to Microsoft Dynamics 365 Business Central. It combines a customer portal with automated licensing, allowing you to manage subscriptions and activations effortlessly while enhancing user satisfaction.
+            Velaro brings self-service convenience to Microsoft Dynamics 365 Business Central. It provides customers and vendors with secure portal access to information and services, streamlining business interactions while enhancing user satisfaction.
           </p>
         </div>
         

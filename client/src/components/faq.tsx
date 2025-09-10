@@ -19,35 +19,34 @@ const faqData = [
     )
   },
   {
-    id: "activate",
-    question: "How to Activate a License",
+    id: "setup",
+    question: "How to Set Up the Customer Portal",
     answer: (
       <div className="text-muted-foreground space-y-3">
-        <p>After installing Velaro, follow these steps to activate your license:</p>
+        <p>After installing Velaro, follow these steps to configure your customer and vendor portal:</p>
         <ol className="list-decimal list-inside space-y-2 ml-4">
           <li>Open the Velaro extension setup page in Business Central</li>
-          <li>Enter the license key provided when you purchased Velaro</li>
-          <li>If online activation is supported, you can sign in to retrieve a license automatically</li>
-          <li>Click <strong>Activate</strong></li>
-          <li>The extension will validate the license and confirm activation</li>
+          <li>Configure portal settings and branding options</li>
+          <li>Set up user roles and permissions for portal access</li>
+          <li>Define what information and services customers/vendors can access</li>
+          <li>Test the portal configuration with a sample user account</li>
         </ol>
       </div>
     )
   },
   {
-    id: "offline",
-    question: "How to Use Offline Tokens (Offline Activation)",
+    id: "users",
+    question: "How to Manage Portal Users and Access",
     answer: (
       <div className="text-muted-foreground space-y-3">
-        <p>If your Business Central environment has no internet connectivity, Velaro supports offline activation via tokens:</p>
+        <p>Velaro provides flexible access control to manage who can access your portal and what they can see:</p>
         <ol className="list-decimal list-inside space-y-2 ml-4">
-          <li>In the Velaro setup page, click <strong>Generate Offline Token</strong></li>
-          <li>This produces a unique code representing your environment and license request</li>
-          <li>Using an internet-connected device, go to the Velaro offline activation page</li>
-          <li>Enter the token and your license information</li>
-          <li>Generate an activation response token</li>
-          <li>Return to your Business Central environment and enter the response token</li>
-          <li>Complete the offline activation process</li>
+          <li>In the Velaro user management section, create portal user accounts</li>
+          <li>Assign appropriate roles (Customer, Vendor, or custom roles)</li>
+          <li>Configure permissions for each role to control access to specific information</li>
+          <li>Set up authentication methods for secure portal access</li>
+          <li>Monitor user activity and adjust permissions as needed</li>
+          <li>Provide users with their portal login credentials and access instructions</li>
         </ol>
       </div>
     )
@@ -60,8 +59,8 @@ const faqData = [
         <p>If you need additional help with Velaro, here are your support options:</p>
         <ul className="list-disc list-inside space-y-2 ml-4">
           <li>Check the built-in help documentation within the Velaro extension</li>
-          <li>Review the setup guide and troubleshooting tips in your license portal</li>
-          <li>Contact our support team with your license information for personalized assistance</li>
+          <li>Review the setup guide and troubleshooting tips in your admin portal</li>
+          <li>Contact our support team with your configuration details for personalized assistance</li>
           <li>Visit our knowledge base for additional resources and updates</li>
         </ul>
       </div>

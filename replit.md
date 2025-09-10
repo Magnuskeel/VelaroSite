@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a modern single-page marketing website for Velaro, a Microsoft Dynamics 365 Business Central extension that provides self-service portal functionality and automated licensing. The site serves as a portable informational and support platform targeting both Business Central administrators and small business owners.
+This is a modern single-page marketing website for Velaro, a Microsoft Dynamics 365 Business Central extension that provides customer and vendor portal functionality. The site serves as a portable informational and support platform targeting both Business Central administrators and small business owners.
 
 The application is built as a React-based single-page application with a clean, professional design that emphasizes Velaro's brand identity (blue color scheme with white "V" arrow logo) and provides comprehensive information about the product's features, setup instructions, and legal documentation.
 
@@ -36,7 +36,7 @@ Preferred communication style: Simple, everyday language.
 - **Navigation**: Fixed header with smooth scroll navigation to page sections
 - **Hero Section**: Prominent Velaro logo display with call-to-action
 - **Marketing Overview**: Feature benefits with icon-based cards
-- **FAQ Section**: Collapsible accordion for setup and licensing instructions
+- **FAQ Section**: Collapsible accordion for setup and portal configuration instructions
 - **Legal Sections**: Privacy Policy and EULA with structured content cards
 - **Footer**: Brand reinforcement with quick navigation links
 

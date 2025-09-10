@@ -23,11 +23,11 @@ export default function Hero() {
         </div>
         
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-testid="text-slogan">
-          Self‑Service Portal & Automated Licensing for Business Central
+          Customer & Vendor Portal for Business Central
         </h1>
         
         <p className="text-xl sm:text-2xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed" data-testid="text-elevator-pitch">
-          Velaro is a Business Central extension that empowers your customers with a self‑service portal and automates license management. Simplify subscription setup, activation, and payments all within your Business Central ecosystem.
+          Velaro is a Business Central extension that provides your customers and vendors with a powerful self-service portal. Streamline interactions, enable secure access to information, and enhance business relationships all within your Business Central ecosystem.
         </p>
         
         <Button 
